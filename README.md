@@ -41,12 +41,12 @@ In this lab, An **AWS Glue crawler** is created to **auto discover** the **schem
 The discovered information (from above) is **registered** in the **AWS Glue Catalog**. This enables AWS Glue to use the stored catalog information for **ETL processing**. It will also allow **AWS Athena** to **run queries** on the data stored in Amazon S3. </br> </br>
 
 #### Actions
-**1. Creating a Glue Crawler:**
-   a. Setting crawler properties, _a.k.a_ **name** 
-   b. Choosing data sources and classifiers. Here, **S3** has been selected as the **data source** and it's **path** has been added for crawling purposes
-   c. Configuring security settings. Here, **ServerlessAnalyticsRole** has been selected as the existing **IAM** role.
-   d. Setting outputs and scheduling. At first, a new database **nyctaxi_db** has been created as the **target database**. Later, it has been included in the output condifuration with **raw_** as table name prefix.
-   e. Reviewing and creating the glue crawler **nyx_taxi_crawler**.
+**1. Creating a Glue Crawler:** </br>
+   - a. Setting crawler properties, _a.k.a_ **name** </br>
+   - b. Choosing data sources and classifiers. Here, **S3** has been selected as the **data source** and it's **path** has been added for crawling purposes. </br>
+   - c. Configuring security settings. Here, **ServerlessAnalyticsRole** has been selected as the existing **IAM** role.
+   - d. Setting outputs and scheduling. At first, a new database **nyctaxi_db** has been created as the **target database**. Later, it has been included in the output condifuration with **raw_** as table name prefix.
+   - e. Reviewing and creating the glue crawler **nyx_taxi_crawler**.
 
 Instructions for this lab from AWS can be found [here](https://catalog.us-east-1.prod.workshops.aws/workshops/276faf92-bffc-4843-8a8e-8078add48194/en-US/20-cataloging-data/21-create-crawler).
 
