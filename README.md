@@ -27,11 +27,11 @@ In this [Lab experiment](https://catalog.us-east-1.prod.workshops.aws/workshops/
 2. [Self paces](https://catalog.us-east-1.prod.workshops.aws/workshops/276faf92-bffc-4843-8a8e-8078add48194/en-US/10-getting-started/12-own-account)
 
 ## Labs executed
-Lab 1: [Discovering and cataloging the data](https://catalog.us-east-1.prod.workshops.aws/workshops/276faf92-bffc-4843-8a8e-8078add48194/en-US/20-cataloging-data)
-Lab 2: [Exploring the data](https://catalog.us-east-1.prod.workshops.aws/workshops/276faf92-bffc-4843-8a8e-8078add48194/en-US/30-exploring-data)
-Lab 3: [Transforming the data](https://catalog.us-east-1.prod.workshops.aws/workshops/276faf92-bffc-4843-8a8e-8078add48194/en-US/40-transforming-data)
-Lab 4: [Enriching the data](https://catalog.us-east-1.prod.workshops.aws/workshops/276faf92-bffc-4843-8a8e-8078add48194/en-US/50-enriching-data)
-Lab 5: [Visualizing the data](https://catalog.us-east-1.prod.workshops.aws/workshops/276faf92-bffc-4843-8a8e-8078add48194/en-US/60-visualizing-data)
+Lab 1: [Discovering and cataloging the data](https://github.com/Nazarah/aws-serverless-datalake-jumpstart/blob/main/README.md#lab-1-discovering-and-cataloging-the-data) </br>
+Lab 2: [Exploring the data](https://github.com/Nazarah/aws-serverless-datalake-jumpstart/blob/main/README.md#lab-2-exploring-the-data) </br>
+Lab 3: [Transforming the data](https://github.com/Nazarah/aws-serverless-datalake-jumpstart/blob/main/README.md#lab-3-transforming-the-data) </br>
+Lab 4: [Enriching the data](https://github.com/Nazarah/aws-serverless-datalake-jumpstart/blob/main/README.md#lab-4-enriching-the-data) </br>
+Lab 5: [Visualizing the data](https://github.com/Nazarah/aws-serverless-datalake-jumpstart/blob/main/README.md#lab-2-visualizing-the-data) </br>
 
 ### Lab 1: Discovering and Cataloging the Data
 
@@ -41,6 +41,14 @@ In this lab, the following actions have been executed:
 1. Create an **AWS Glue crawler** to **auto discover** the **schema** of the data stored in amazon S3
 2. The discovered information (from above) is **registered** in the **AWS Glue Catalog**. This enables AWS Glue to use the stored catalog information for **ETL processing**.
 4. It will also allow **AWS Athena** to **run queries** on the data stored in Amazon S3.
+
+### Lab 2: Exploring the data
+
+### Lab 3: Transforming the data
+
+### Lab 4: Enriching the data
+
+### Lab 5: Visualizing the data
 
 
 
