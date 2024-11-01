@@ -42,11 +42,11 @@ The discovered information (from above) is **registered** in the **AWS Glue Cata
 
 #### Actions
 **1. Creating a Glue Crawler:** </br>
-   - a. Setting crawler properties, _a.k.a_ **name** </br>
-   - b. Choosing data sources and classifiers. Here, **S3** has been selected as the **data source** and it's **path** has been added for crawling purposes. </br>
-   - c. Configuring security settings. Here, **ServerlessAnalyticsRole** has been selected as the existing **IAM** role.
-   - d. Setting outputs and scheduling. At first, a new database **nyctaxi_db** has been created as the **target database**. Later, it has been included in the output condifuration with **raw_** as table name prefix.
-   - e. Reviewing and creating the glue crawler **nyx_taxi_crawler**.
+   - a. Setting crawler properties, _a.k.a_ **name** [image](https://github.com/Nazarah/aws-serverless-datalake-jumpstart/blob/main/Images/lab1/1_set_crawler_properties.png)
+   - b. Choosing data sources and classifiers. Here, **S3** has been selected as the **data source** and it's **path** has been added for crawling purposes. [image](https://github.com/Nazarah/aws-serverless-datalake-jumpstart/blob/main/Images/lab1/2_choose_daatsource_and_classifier_1.png) [image](https://github.com/Nazarah/aws-serverless-datalake-jumpstart/blob/main/Images/lab1/2_choose_daatsource_and_classifier_2.png)
+   - c. Configuring security settings. Here, **ServerlessAnalyticsRole** has been selected as the existing **IAM** role. [image](https://github.com/Nazarah/aws-serverless-datalake-jumpstart/blob/main/Images/lab1/3_configure_security_settings.png)
+   - d. Setting outputs and scheduling. At first, a new database **nyctaxi_db** has been created as the **target database**. Later, it has been included in the output condifuration with **raw_** as table name prefix. [image](https://github.com/Nazarah/aws-serverless-datalake-jumpstart/blob/main/Images/lab1/4_set_output_and_scheduling_1.png) [image](https://github.com/Nazarah/aws-serverless-datalake-jumpstart/blob/main/Images/lab1/4_set_output_and_scheduling_2.png)
+   - e. Reviewing and creating the glue crawler **nyx_taxi_crawler**. [image](https://github.com/Nazarah/aws-serverless-datalake-jumpstart/blob/main/Images/lab1/5_review_and_create_crawler_1.png) [image](https://github.com/Nazarah/aws-serverless-datalake-jumpstart/blob/main/Images/lab1/5_review_and_create_crawler_2.png)
 
 Instructions for this lab from AWS can be found [here](https://catalog.us-east-1.prod.workshops.aws/workshops/276faf92-bffc-4843-8a8e-8078add48194/en-US/20-cataloging-data/21-create-crawler).
 
