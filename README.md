@@ -48,7 +48,20 @@ c. Configuring security settings. Here, **ServerlessAnalyticsRole** has been sel
 d. Setting outputs and scheduling. At first, a new database **nyctaxi_db** has been created as the **target database**. Later, it has been included in the output condifuration with **raw_** as table name prefix.</br> ![image](https://github.com/Nazarah/aws-serverless-datalake-jumpstart/blob/main/Images/lab1/4_set_output_and_scheduling_1.png)  </br></br> ![image](https://github.com/Nazarah/aws-serverless-datalake-jumpstart/blob/main/Images/lab1/4_set_output_and_scheduling_2.png)</br></br>
 e. Reviewing and creating the glue crawler **nyx_taxi_crawler**.</br> ![image](https://github.com/Nazarah/aws-serverless-datalake-jumpstart/blob/main/Images/lab1/5_review_and_create_crawler_1.png) </br></br> ![image](https://github.com/Nazarah/aws-serverless-datalake-jumpstart/blob/main/Images/lab1/5_review_and_create_crawler_2.png)
 </br></br>
-Instructions for this lab from AWS can be found [here](https://catalog.us-east-1.prod.workshops.aws/workshops/276faf92-bffc-4843-8a8e-8078add48194/en-US/20-cataloging-data/21-create-crawler).
+
+Instructions from AWS to create crawlers can be found [here](https://catalog.us-east-1.prod.workshops.aws/workshops/276faf92-bffc-4843-8a8e-8078add48194/en-US/20-cataloging-data/21-create-crawler). </br></br></br>
+
+**2. Running the Crawler**
+Here the data would be cataloged by running the created crawler. When the crawler **nyx_taxi_crawler** has run successfully, a value of **2** would appear under the column **Table changes from the last run** under the crawler list. </br>
+
+Instructions from AWS to run a crawler can be found [here](https://catalog.us-east-1.prod.workshops.aws/workshops/276faf92-bffc-4843-8a8e-8078add48194/en-US/20-cataloging-data/22-run-crawler). </br></br></br>
+
+**3. Review the metadata in Glue Data Catalog**
+To review metadata of the created database, the **schemas** of any table included in the Database can be checked.
+
+Instructions from AWS to run a crawler can be found [here](https://catalog.us-east-1.prod.workshops.aws/workshops/276faf92-bffc-4843-8a8e-8078add48194/en-US/20-cataloging-data/23-review-metadata). </br></br>
+
+> Glue Data Catalog contains references to data that is used as sources and targets of the extract, transform, and load (ETL) jobs in AWS Glue.
 
 
 ### Lab 2: Exploring the data
