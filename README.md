@@ -52,7 +52,7 @@ e. Reviewing and creating the glue crawler **nyx_taxi_crawler**.</br> ![image](h
 Instructions from AWS to create crawlers can be found [here](https://catalog.us-east-1.prod.workshops.aws/workshops/276faf92-bffc-4843-8a8e-8078add48194/en-US/20-cataloging-data/21-create-crawler). </br></br></br>
 
 **2. Running the Crawler**</br> </br>
-Here the data would be cataloged by running the created crawler. When the crawler **nyx_taxi_crawler** has run successfully, a value of **2** would appear under the column **Table changes from the last run** under the crawler list. </br> ![image]([https://github.com/Nazarah/aws-serverless-datalake-jumpstart/blob/main/Images/lab1/5_review_and_create_crawler_2.png](https://github.com/Nazarah/aws-serverless-datalake-jumpstart/blob/main/Images/lab1/6_run_crawler.png))
+Here the data would be cataloged by running the created crawler. When the crawler **nyx_taxi_crawler** has run successfully, a value of **2** would appear under the column **Table changes from the last run** under the crawler list. </br> ![image](https://github.com/Nazarah/aws-serverless-datalake-jumpstart/blob/main/Images/lab1/6_run_crawler.png)
 </br></br>
 
 Instructions from AWS to run a crawler can be found [here](https://catalog.us-east-1.prod.workshops.aws/workshops/276faf92-bffc-4843-8a8e-8078add48194/en-US/20-cataloging-data/22-run-crawler). </br></br></br>
