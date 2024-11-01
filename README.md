@@ -39,7 +39,7 @@ Lab 5: [Visualizing the data](https://github.com/Nazarah/aws-serverless-datalake
 
 In this lab, the following actions have been executed:
 1. An **AWS Glue crawler** is created to **auto discover** the **schema** of the data stored in amazon S3.</br>
-![video](https://github.com/Nazarah/aws-serverless-datalake-jumpstart/blob/main/videos/lab1/1_create_crawler_aws_glue.mov)
+
 
 2. The discovered information (from above) is **registered** in the **AWS Glue Catalog**. This enables AWS Glue to use the stored catalog information for **ETL processing**. It will also allow **AWS Athena** to **run queries** on the data stored in Amazon S3.
 
