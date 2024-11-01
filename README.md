@@ -38,9 +38,10 @@ Lab 5: [Visualizing the data](https://github.com/Nazarah/aws-serverless-datalake
 > A data lake has an array of data sources and formats. So it is important to **discover** and **catalog** the acquired data to **understand** it and **enable integrations** with other purpose built AWS services.
 
 In this lab, the following actions have been executed:
-1. Create an **AWS Glue crawler** to **auto discover** the **schema** of the data stored in amazon S3
-2. The discovered information (from above) is **registered** in the **AWS Glue Catalog**. This enables AWS Glue to use the stored catalog information for **ETL processing**.
-4. It will also allow **AWS Athena** to **run queries** on the data stored in Amazon S3.
+1. An **AWS Glue crawler** is created to **auto discover** the **schema** of the data stored in amazon S3.</br>
+![video](https://github.com/Nazarah/aws-serverless-datalake-jumpstart/blob/main/videos/lab1/1_create_crawler_aws_glue.mov)
+
+2. The discovered information (from above) is **registered** in the **AWS Glue Catalog**. This enables AWS Glue to use the stored catalog information for **ETL processing**. It will also allow **AWS Athena** to **run queries** on the data stored in Amazon S3.
 
 ### Lab 2: Exploring the data
 
