@@ -27,11 +27,11 @@ In this [Lab experiment](https://catalog.us-east-1.prod.workshops.aws/workshops/
 2. [Self paces](https://catalog.us-east-1.prod.workshops.aws/workshops/276faf92-bffc-4843-8a8e-8078add48194/en-US/10-getting-started/12-own-account)
 
 ## Labs executed
-Lab 1: [Discovering and cataloging the data](https://catalog.us-east-1.prod.workshops.aws/workshops/276faf92-bffc-4843-8a8e-8078add48194/en-US/20-cataloging-data) </br>
-Lab 2: [Exploring the data](https://catalog.us-east-1.prod.workshops.aws/workshops/276faf92-bffc-4843-8a8e-8078add48194/en-US/30-exploring-data) </br>
-Lab 3: [Transforming the data](https://catalog.us-east-1.prod.workshops.aws/workshops/276faf92-bffc-4843-8a8e-8078add48194/en-US/40-transforming-data) </br>
-Lab 4: [Enriching the data](https://catalog.us-east-1.prod.workshops.aws/workshops/276faf92-bffc-4843-8a8e-8078add48194/en-US/50-enriching-data) </br>
-Lab 5: [Visualizing the data](https://catalog.us-east-1.prod.workshops.aws/workshops/276faf92-bffc-4843-8a8e-8078add48194/en-US/60-visualizing-data) </br>
+Lab 1: [Discovering and cataloging the data](https://github.com/Nazarah/aws-serverless-datalake-jumpstart/blob/main/README.md#lab-1-discovering-and-cataloging-the-data) </br>
+Lab 2: [Exploring the data](https://github.com/Nazarah/aws-serverless-datalake-jumpstart/blob/main/README.md#lab-2-exploring-the-data) </br>
+Lab 3: [Transforming the data](https://github.com/Nazarah/aws-serverless-datalake-jumpstart/blob/main/README.md#lab-3-transforming-the-data) </br>
+Lab 4: [Enriching the data](https://github.com/Nazarah/aws-serverless-datalake-jumpstart/blob/main/README.md#lab-4-enriching-the-data) </br>
+Lab 5: [Visualizing the data](https://github.com/Nazarah/aws-serverless-datalake-jumpstart/blob/main/README.md#lab-2-visualizing-the-data) </br>
 
 ### Lab 1: Discovering and Cataloging the Data
 
