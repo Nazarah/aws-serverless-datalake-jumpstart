@@ -33,15 +33,15 @@ Lab 3: [Transforming the data](https://github.com/Nazarah/aws-serverless-datalak
 Lab 4: [Enriching the data](https://github.com/Nazarah/aws-serverless-datalake-jumpstart/blob/main/README.md#lab-4-enriching-the-data) </br>
 Lab 5: [Visualizing the data](https://github.com/Nazarah/aws-serverless-datalake-jumpstart/blob/main/README.md#lab-2-visualizing-the-data) </br>
 
-### Lab 1: Discovering and Cataloging the Data
+## Lab 1: Discovering and Cataloging the Data
 
 > A data lake has an array of data sources and formats. So it is important to **discover** and **catalog** the acquired data to **understand** it and **enable integrations** with other purpose built AWS services.
 
 In this lab, An **AWS Glue crawler** is created to **auto discover** the **schema** of the data stored in amazon S3.</br>
 The discovered information (from above) is **registered** in the **AWS Glue Catalog**. This enables AWS Glue to use the stored catalog information for **ETL processing**. It will also allow **AWS Athena** to **run queries** on the data stored in Amazon S3. </br> </br>
 
-#### Actions
-**1. Creating a Glue Crawler:** </br> </br>
+
+### Action 1. Creating a Glue Crawler:
 a. Setting crawler properties, _a.k.a_ **name** </br> ![image](https://github.com/Nazarah/aws-serverless-datalake-jumpstart/blob/main/Images/lab1/1_set_crawler_properties.png) </br></br>
 b. Choosing data sources and classifiers. Here, **S3** has been selected as the **data source** and it's **path** has been added for crawling purposes.</br> ![image](https://github.com/Nazarah/aws-serverless-datalake-jumpstart/blob/main/Images/lab1/2_choose_daatsource_and_classifier_1.png) </br></br> ![image](https://github.com/Nazarah/aws-serverless-datalake-jumpstart/blob/main/Images/lab1/2_choose_daatsource_and_classifier_2.png)</br></br>
 c. Configuring security settings. Here, **ServerlessAnalyticsRole** has been selected as the existing **IAM** role.</br> ![image](https://github.com/Nazarah/aws-serverless-datalake-jumpstart/blob/main/Images/lab1/3_configure_security_settings.png)</br></br>
@@ -51,13 +51,13 @@ e. After reviewing the configurations, the glue crawler **nyx_taxi_crawler** is 
 
 Instructions from AWS to create crawlers can be found [here](https://catalog.us-east-1.prod.workshops.aws/workshops/276faf92-bffc-4843-8a8e-8078add48194/en-US/20-cataloging-data/21-create-crawler). </br></br></br>
 
-**2. Running the Crawler**</br> </br>
+### Action 2. Running the Crawler
 Here the data would be cataloged by running the created crawler. When the crawler **nyx_taxi_crawler** has run successfully, a value of **2** would appear under the column **Table changes from the last run** under the crawler list. </br> ![image](https://github.com/Nazarah/aws-serverless-datalake-jumpstart/blob/main/Images/lab1/6_run_crawler.png)
 </br></br>
 
 Instructions from AWS to run a crawler can be found [here](https://catalog.us-east-1.prod.workshops.aws/workshops/276faf92-bffc-4843-8a8e-8078add48194/en-US/20-cataloging-data/22-run-crawler). </br></br></br>
 
-**3. Review the metadata in Glue Data Catalog**</br> </br>
+### Action 3. Review the metadata in Glue Data Catalog
 To review metadata of the created database, the **schemas** of any table included in the Database can be checked.</br>
 
 for example, the **raw_yellow_trip** table from the **nyctaxi_db** database has the following **18** columns:</br>
@@ -70,21 +70,38 @@ Instructions from AWS to run a crawler can be found [here](https://catalog.us-ea
 > Glue Data Catalog contains references to data that is used as sources and targets of the extract, transform, and load (ETL) jobs in AWS Glue.
 
 
-### Lab 2: Exploring the data
+## Lab 2: Exploring the data
 
-### Lab 3: Transforming the data
+In this lab, **Amazon Athena** has been used to explore the data and and check for data quality issues. To fix the quality issues, relevant **table properties** in the **AWS Glue Catalougs** have been updated.</br>
 
-### Lab 4: Enriching the data
+> Amazon Athena automatically stores query results and metadata information for each query that runs in a query result location specified in Amazon S3. If necessary, the files in this location can be accessed to work with them. Query result files can also be directly downleaded from the Athena console.
 
-### Lab 5: Visualizing the data
+These [instructions](https://catalog.us-east-1.prod.workshops.aws/workshops/276faf92-bffc-4843-8a8e-8078add48194/en-US/30-exploring-data/31-using-athena-first-time) should be followed when launching **Amazon Athena** for the first time. <b/r>
+
+### Action 1: Previewing the table data
+
+Data included in the tables **raw_yellow_tripdata** and **taxi_zone_lookup** can be previewed by clicking on the menu icon **⋮** beside the relevant table, and then selecting **Preview table**. </br> </br>
+
+Instructions from AWS to use **Amazon Athena** for previewing table data from a database found [here](https://catalog.us-east-1.prod.workshops.aws/workshops/276faf92-bffc-4843-8a8e-8078add48194/en-US/20-cataloging-data/23-review-metadata). </br></br>
+
+### Action 2: Identifying and Fixing Data Quality Issues
+
+### Action 3: Running SQL Queries to Explore the data
+
+
+## Lab 3: Transforming the data
+
+## Lab 4: Enriching the data
+
+## Lab 5: Visualizing the data
 
 
 
 ## Terminologies (in order of appearances)
 - [Data Lake](https://catalog.us-east-1.prod.workshops.aws/workshops/276faf92-bffc-4843-8a8e-8078add48194/en-US/10-getting-started#what-is-a-data-lake)
-)
 - [Amazon S3](https://catalog.us-east-1.prod.workshops.aws/workshops/276faf92-bffc-4843-8a8e-8078add48194/en-US/10-getting-started#introducing-amazon-s3)
 - [Amazon Glue](https://catalog.us-east-1.prod.workshops.aws/workshops/276faf92-bffc-4843-8a8e-8078add48194/en-US/20-cataloging-data#introducing-aws-glue)
-
+- [Amazon Athena](https://catalog.us-east-1.prod.workshops.aws/workshops/276faf92-bffc-4843-8a8e-8078add48194/en-US/30-exploring-data#introducing-amazon-athena)
+- 
 
 
