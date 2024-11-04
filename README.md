@@ -82,9 +82,20 @@ These [instructions](https://catalog.us-east-1.prod.workshops.aws/workshops/276f
 
 Data included in the tables **raw_yellow_tripdata** and **taxi_zone_lookup** can be previewed by clicking on the menu icon **⋮** beside the relevant table, and then selecting **Preview table**. </br> </br>
 
-Instructions from AWS to use **Amazon Athena** for previewing table data from a database found [here](https://catalog.us-east-1.prod.workshops.aws/workshops/276faf92-bffc-4843-8a8e-8078add48194/en-US/20-cataloging-data/23-review-metadata). </br></br>
+Instructions from AWS to use **Amazon Athena** for previewing table data from a database can be found [here](https://catalog.us-east-1.prod.workshops.aws/workshops/276faf92-bffc-4843-8a8e-8078add48194/en-US/20-cataloging-data/23-review-metadata). </br></br>
 
 ### Action 2: Identifying and Fixing Data Quality Issues
+
+> In the previous step, **quotes ("")** around the data values (e.g. from columns **borough**, **zone**, etc.) in the CSV file associated with the **taxi_zone_lookup** table were found. These quotes shouldn't be part of the data to be analyzed later. So to read the CSV file properly, table properties in AWS glue were updated to use the serialization library **OpenCSVSerDe**. In addition, the existing Serde parameter(s) was removed and was replaced with the following **key-value** pairs:
+
+- `escapeChar`, `\`
+- `quoteChar`, `"`
+- `escapeChar`, `,`
+</br> </br>
+
+> When the preview query for **taxi_zone_lookup** was run, the column values appeared with removed quotes.
+
+Instructions from AWS to update the **Serialization lib** for previewing table data from a database can be found [here](https://catalog.us-east-1.prod.workshops.aws/workshops/276faf92-bffc-4843-8a8e-8078add48194/en-US/30-exploring-data/33-handling-csv-double-quote). </br></br>
 
 ### Action 3: Running SQL Queries to Explore the data
 
