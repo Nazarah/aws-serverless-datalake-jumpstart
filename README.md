@@ -108,6 +108,40 @@ Instructions from AWS to update the **Serialization lib** for previewing table d
 
 ### Action 3: Running SQL Queries to Explore the data
 
+The following SQL queries were run to explore the data:
+
+**1. Checking number of yellow taxi trip records**
+```SELECT COUNT(*) "Count" FROM raw_yellow_tripdata;``` </br></br>
+**2. Exploring data categories**
+```
+-- observe NULL values
+SELECT vendorid, COUNT(*) "Count"
+FROM  raw_yellow_tripdata
+GROUP BY vendorid
+ORDER BY 1;
+```
+```
+-- observe other categories
+SELECT pulocationid, COUNT(*) "Count"
+FROM   raw_yellow_tripdata
+GROUP BY pulocationid
+ORDER BY 1;
+```
+```
+-- observe NULL values
+SELECT payment_type, COUNT(*) "Count"
+FROM   raw_yellow_tripdata
+GROUP BY payment_type
+ORDER BY 1;
+```
+</br></br>
+**3. Explore records with NULL Vendor ID**
+**4. Explore records by time period**
+**5. Count records that falls outside of year 2020**
+**6. Count records with NULL values (based on Vendor ID) that falls within 2020**
+**7. Count records that falls in the last quarter of 2020, exclude records with missing Vendor ID**
+**8. Join taxi trips data with taxi zone look up table**
+
 
 ## Lab 3: Transforming the data
 
