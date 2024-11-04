@@ -45,8 +45,8 @@ The discovered information (from above) is **registered** in the **AWS Glue Cata
 a. Setting crawler properties, _a.k.a_ **name** </br> ![image](https://github.com/Nazarah/aws-serverless-datalake-jumpstart/blob/main/Images/lab1/1_set_crawler_properties.png) </br></br>
 b. Choosing data sources and classifiers. Here, **S3** has been selected as the **data source** and it's **path** has been added for crawling purposes.</br> ![image](https://github.com/Nazarah/aws-serverless-datalake-jumpstart/blob/main/Images/lab1/2_choose_daatsource_and_classifier_1.png) </br></br> ![image](https://github.com/Nazarah/aws-serverless-datalake-jumpstart/blob/main/Images/lab1/2_choose_daatsource_and_classifier_2.png)</br></br>
 c. Configuring security settings. Here, **ServerlessAnalyticsRole** has been selected as the existing **IAM** role.</br> ![image](https://github.com/Nazarah/aws-serverless-datalake-jumpstart/blob/main/Images/lab1/3_configure_security_settings.png)</br></br>
-d. Setting outputs and scheduling. At first, a new database **nyctaxi_db** has been created as the **target database**. Later, it has been included in the output condifuration with **raw_** as table name prefix.</br> ![image](https://github.com/Nazarah/aws-serverless-datalake-jumpstart/blob/main/Images/lab1/4_set_output_and_scheduling_1.png)  </br></br> ![image](https://github.com/Nazarah/aws-serverless-datalake-jumpstart/blob/main/Images/lab1/4_set_output_and_scheduling_2.png)</br></br>
-e. Reviewing and creating the glue crawler **nyx_taxi_crawler**.</br> ![image](https://github.com/Nazarah/aws-serverless-datalake-jumpstart/blob/main/Images/lab1/5_review_and_create_crawler_1.png) </br></br> ![image](https://github.com/Nazarah/aws-serverless-datalake-jumpstart/blob/main/Images/lab1/5_review_and_create_crawler_2.png)
+d. Setting outputs and scheduling. At first, a new database **nyctaxi_db** has been created as the **target database**. Later, when available for selection, **nyctaxi_db** is included in the output confifuration with **raw_** as table name prefix.</br> ![image](https://github.com/Nazarah/aws-serverless-datalake-jumpstart/blob/main/Images/lab1/4_set_output_and_scheduling_1.png)  </br></br> ![image](https://github.com/Nazarah/aws-serverless-datalake-jumpstart/blob/main/Images/lab1/4_set_output_and_scheduling_2.png)</br></br>
+e. After reviewing the configurations, the glue crawler **nyx_taxi_crawler** is created.</br> ![image](https://github.com/Nazarah/aws-serverless-datalake-jumpstart/blob/main/Images/lab1/5_review_and_create_crawler_1.png) </br></br> ![image](https://github.com/Nazarah/aws-serverless-datalake-jumpstart/blob/main/Images/lab1/5_review_and_create_crawler_2.png)
 </br></br>
 
 Instructions from AWS to create crawlers can be found [here](https://catalog.us-east-1.prod.workshops.aws/workshops/276faf92-bffc-4843-8a8e-8078add48194/en-US/20-cataloging-data/21-create-crawler). </br></br></br>
@@ -58,7 +58,10 @@ Here the data would be cataloged by running the created crawler. When the crawle
 Instructions from AWS to run a crawler can be found [here](https://catalog.us-east-1.prod.workshops.aws/workshops/276faf92-bffc-4843-8a8e-8078add48194/en-US/20-cataloging-data/22-run-crawler). </br></br></br>
 
 **3. Review the metadata in Glue Data Catalog**</br> </br>
-To review metadata of the created database, the **schemas** of any table included in the Database can be checked.
+To review metadata of the created database, the **schemas** of any table included in the Database can be checked.</br>
+
+for example, the **raw_yellow_trip** table from the **nyctaxi_db** database has the following **18** columns:</br>
+`veodorid`, `tpep_pickup_datetime`, `tpep_dropoff_datetime`, `passenger_count`, `trip_distance`, `ratecodeid`, `store_and_fwd_flag`, `pulocationid`, `dolocationid`, `payment_type`, `tpep_pickup_datetime`, `fare_amount`, `extra`, `mta_tax`, `tip_amount`, `tolls_amount`, `improvement_surcharge`, `total_amount`, `congestion_surcharge`. <br>
 
 Instructions from AWS to run a crawler can be found [here](https://catalog.us-east-1.prod.workshops.aws/workshops/276faf92-bffc-4843-8a8e-8078add48194/en-US/20-cataloging-data/23-review-metadata). </br></br> ![image](https://github.com/Nazarah/aws-serverless-datalake-jumpstart/blob/main/Images/lab1/7_view_table_metadata_1.png)
 </br></br>![image](https://github.com/Nazarah/aws-serverless-datalake-jumpstart/blob/main/Images/lab1/7_view_table_metadata_2.png)
