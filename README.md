@@ -114,7 +114,7 @@ The following SQL queries were run to explore the data:
 ```
 SELECT COUNT(*) "Count" FROM raw_yellow_tripdata;
 ```
-![Results](https://github.com/Nazarah/aws-serverless-datalake-jumpstart/blob/main/query-results/lab2/1_no_of_yellow_taxi_trips.csv)
+Resulting CSV file can be found [here](https://github.com/Nazarah/aws-serverless-datalake-jumpstart/blob/main/query-results/lab2/1_no_of_yellow_taxi_trips.csv)
 </br></br>
 **2. Exploring data categories**
 ```
@@ -124,6 +124,7 @@ FROM  raw_yellow_tripdata
 GROUP BY vendorid
 ORDER BY 1;
 ```
+Resulting CSV file can be found [here](https://github.com/Nazarah/aws-serverless-datalake-jumpstart/blob/main/query-results/lab2/2_1_null_values_groupby_vendor.csv)
 ```
 -- observe other categories
 SELECT pulocationid, COUNT(*) "Count"
@@ -131,6 +132,7 @@ FROM   raw_yellow_tripdata
 GROUP BY pulocationid
 ORDER BY 1;
 ```
+Resulting CSV file can be found [here](https://github.com/Nazarah/aws-serverless-datalake-jumpstart/blob/main/query-results/lab2/2_2_other_categories_groupby_pulocation.csv)
 ```
 -- observe NULL values
 SELECT payment_type, COUNT(*) "Count"
@@ -138,6 +140,7 @@ FROM   raw_yellow_tripdata
 GROUP BY payment_type
 ORDER BY 1;
 ```
+Resulting CSV file can be found [here](https://github.com/Nazarah/aws-serverless-datalake-jumpstart/blob/main/query-results/lab2/2_3_null_values_groupby_paymenttype.csv)
 </br></br>
 **3. Explore records with NULL Vendor ID**
 ```
@@ -148,6 +151,7 @@ FROM   raw_yellow_tripdata
 WHERE  vendorid IS NULL
 LIMIT 100;
 ```
+Resulting CSV file can be found [here](https://github.com/Nazarah/aws-serverless-datalake-jumpstart/blob/main/query-results/lab2/3_records_with_null_vendorid.csv)
 </br></br>
 **4. Explore records by time period**
 ```
@@ -158,6 +162,7 @@ FROM   raw_yellow_tripdata
 GROUP BY SUBSTR(tpep_pickup_datetime, 1, 7) 
 ORDER BY 1;
 ```
+Resulting CSV file can be found [here](https://github.com/Nazarah/aws-serverless-datalake-jumpstart/blob/main/query-results/lab2/4_records_by_timeperiod.csv)
 </br></br>
 **5. Count records that falls outside of year 2020**
 ```
@@ -166,6 +171,7 @@ SELECT COUNT(*) "Count"
 FROM   raw_yellow_tripdata 
 WHERE  SUBSTR(tpep_pickup_datetime, 1, 7) NOT LIKE '2020%';
 ```
+Resulting CSV file can be found [here](https://github.com/Nazarah/aws-serverless-datalake-jumpstart/blob/main/query-results/lab2/5_records_outside_2020.csv)
 </br></br>
 **6. Count records with NULL values (based on Vendor ID) that falls within 2020**
 ```
@@ -175,6 +181,7 @@ FROM   raw_yellow_tripdata
 WHERE  vendorid IS NULL
 AND    SUBSTR(tpep_pickup_datetime, 1, 7) LIKE '2020%';
 ```
+Resulting CSV file can be found [here](https://github.com/Nazarah/aws-serverless-datalake-jumpstart/blob/main/query-results/lab2/6_null_vendorid_within_2020.csv)
 </br></br>
 **7. Count records that falls in the last quarter of 2020, exclude records with missing Vendor ID**
 ```
@@ -184,6 +191,7 @@ FROM   raw_yellow_tripdata
 WHERE  vendorid IS NOT NULL
 AND    SUBSTR(tpep_pickup_datetime, 1, 7) LIKE '2020-1%';
 ```
+Resulting CSV file can be found [here](https://github.com/Nazarah/aws-serverless-datalake-jumpstart/blob/main/query-results/lab2/7_last_quarter_2020_with_vendorid.csv)
 </br></br>
 **8. Join taxi trips data with taxi zone look up table**
 ```
@@ -199,6 +207,7 @@ WHERE  td.pulocationid = pu.locationid AND
        SUBSTR(tpep_pickup_datetime, 1, 7) LIKE '2020-1%'
 LIMIT 100;
 ```
+Resulting CSV file can be found [here](https://github.com/Nazarah/aws-serverless-datalake-jumpstart/blob/main/query-results/lab2/8_1_explore_lookup_information.csv)
 ```
 -- Count total joined records for the last quarter of 2020.
 SELECT COUNT(*) "Count"
@@ -210,6 +219,7 @@ WHERE  td.pulocationid = pu.locationid AND
        vendorid IS NOT NULL AND
        SUBSTR(tpep_pickup_datetime, 1, 7) LIKE '2020-1%';
 ```
+Resulting CSV file can be found [here](https://github.com/Nazarah/aws-serverless-datalake-jumpstart/blob/main/query-results/lab2/8_2_total_join_records.csv)
 </br></br>
 Instructions from AWS to explore the data using SQL queries can be found [here](https://catalog.us-east-1.prod.workshops.aws/workshops/276faf92-bffc-4843-8a8e-8078add48194/en-US/30-exploring-data/34-explore-data-run-queries).
 
