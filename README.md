@@ -37,6 +37,8 @@ Lab 5: [Visualizing the data](https://github.com/Nazarah/aws-serverless-datalake
 
 > A data lake has an array of data sources and formats. So it is important to **discover** and **catalog** the acquired data to **understand** it and **enable integrations** with other purpose built AWS services.
 
+![image](https://static.us-east-1.prod.workshops.aws/public/0bc0242a-91a6-426d-be20-432d0740a157/static/img/20-solution-diagram.png)
+
 In this lab, An **AWS Glue crawler** is created to **auto discover** the **schema** of the data stored in amazon S3.</br>
 The discovered information (from above) is **registered** in the **AWS Glue Catalog**. This enables AWS Glue to use the stored catalog information for **ETL processing**. It will also allow **AWS Athena** to **run queries** on the data stored in Amazon S3. </br> </br>
 
@@ -72,7 +74,9 @@ Instructions from AWS to run a crawler can be found [here](https://catalog.us-ea
 
 ## Lab 2: Exploring the data
 
-In this lab, **Amazon Athena** has been used to explore the data and and check for data quality issues. To fix the quality issues, relevant **table properties** in the **AWS Glue Catalougs** have been updated.</br>
+In this lab, **Amazon Athena** has been used to explore the data and and check for data quality issues. To fix the quality issues, relevant **table properties** in the **AWS Glue Catalougs** have been updated.</br></br>
+
+![image](https://static.us-east-1.prod.workshops.aws/public/0bc0242a-91a6-426d-be20-432d0740a157/static/img/30-solution-diagram.png)
 
 > Amazon Athena automatically stores query results and metadata information for each query that runs in a query result location specified in Amazon S3. If necessary, the files in this location can be accessed to work with them. Query result files can also be directly downleaded from the Athena console.
 
@@ -227,6 +231,32 @@ Instructions from AWS to explore the data using SQL queries can be found [here](
 
 ## Lab 3: Transforming the data
 
+In this lab, AWS Glue Studio has been used to transform existing data from the tables of `nyxtaxi_db` database by enriching them with additional data from other sources to make the data from `raw_yellow_taxi` and `raw_taxi_zone_lookup` tables more useful and insightful during analysis. </br>
+
+![image](https://static.us-east-1.prod.workshops.aws/public/0bc0242a-91a6-426d-be20-432d0740a157/static/img/40-solution-diagram.png) </br></br>
+
+It is recommended to plan in details for the necessary transformation steps. The following actions were executed to transform the data:
+
+### Action 1: Reading yellow trip data from S3, raw_yellow_tripdata table
+### Action 2: Cleaning yellow trip data 
+
+The data from the `raw_yellow_taxi` table was cleaned in 2 steps:</br></br>
+
+**Step 1: Removing records with NULL values** </br>
+
+Any record containing NULL value in the corresponding columns `vendorid`, `payment_type`, `passenger count`, and `ratecodeid` was discarded.
+
+**Step 2: Filtering records within a time period** </br>
+
+To narrow down the data for efficient processing, all records with invalid values in the corresponding `tpep_pickup_datetime` were discarded.
+
+### Action 3: Joining yellow trip data with taxi zone lookup to obtain pickup location information
+### Action 4: Joining yellow trip data with taxi zone lookup to obtain drop-off location information
+### Action 5: Performing data transformation on joined dataset
+### Action 6: Saving processed dataset to S3 in a query optimized format
+### Action 7: Reading yellow trip data from S3, raw_yellow_tripdata table.
+
+
 ## Lab 4: Enriching the data
 
 ## Lab 5: Visualizing the data
@@ -238,6 +268,6 @@ Instructions from AWS to explore the data using SQL queries can be found [here](
 - [Amazon S3](https://catalog.us-east-1.prod.workshops.aws/workshops/276faf92-bffc-4843-8a8e-8078add48194/en-US/10-getting-started#introducing-amazon-s3)
 - [Amazon Glue](https://catalog.us-east-1.prod.workshops.aws/workshops/276faf92-bffc-4843-8a8e-8078add48194/en-US/20-cataloging-data#introducing-aws-glue)
 - [Amazon Athena](https://catalog.us-east-1.prod.workshops.aws/workshops/276faf92-bffc-4843-8a8e-8078add48194/en-US/30-exploring-data#introducing-amazon-athena)
-- 
+- [AWS Glue Studio](https://catalog.us-east-1.prod.workshops.aws/workshops/276faf92-bffc-4843-8a8e-8078add48194/en-US/40-transforming-data#introducing-aws-glue-studio)
 
 
