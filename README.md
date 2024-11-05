@@ -111,7 +111,10 @@ Instructions from AWS to update the **Serialization lib** for previewing table d
 The following SQL queries were run to explore the data:
 
 **1. Checking number of yellow taxi trip records**
-```SELECT COUNT(*) "Count" FROM raw_yellow_tripdata;``` </br></br>
+```
+SELECT COUNT(*) "Count" FROM raw_yellow_tripdata;
+```
+</br></br>
 **2. Exploring data categories**
 ```
 -- observe NULL values
@@ -136,12 +139,80 @@ ORDER BY 1;
 ```
 </br></br>
 **3. Explore records with NULL Vendor ID**
+```
+-- observe other columns with NULL values
+-- passenger_count, ratecodeid, store_and_fwd_flag, payment_type
+SELECT * 
+FROM   raw_yellow_tripdata
+WHERE  vendorid IS NULL
+LIMIT 100;
+```
+</br></br>
 **4. Explore records by time period**
+```
+-- tpep_pickup_datetime is defined as STRING
+-- observe record counts that falls outside of the time period 
+SELECT SUBSTR(tpep_pickup_datetime, 1, 7) "Period", COUNT(*) "Total Records"
+FROM   raw_yellow_tripdata
+GROUP BY SUBSTR(tpep_pickup_datetime, 1, 7) 
+ORDER BY 1;
+```
+</br></br>
 **5. Count records that falls outside of year 2020**
+```
+-- records with incorrect pickup datetime values
+SELECT COUNT(*) "Count"
+FROM   raw_yellow_tripdata 
+WHERE  SUBSTR(tpep_pickup_datetime, 1, 7) NOT LIKE '2020%';
+```
+</br></br>
 **6. Count records with NULL values (based on Vendor ID) that falls within 2020**
+```
+-- Records with NULL categories like Vendor ID
+SELECT COUNT(*) "Count"
+FROM   raw_yellow_tripdata
+WHERE  vendorid IS NULL
+AND    SUBSTR(tpep_pickup_datetime, 1, 7) LIKE '2020%';
+```
+</br></br>
 **7. Count records that falls in the last quarter of 2020, exclude records with missing Vendor ID**
+```
+-- Total records in BER months, excluding columns with missing Vendor ID
+SELECT COUNT(*) "Count"
+FROM   raw_yellow_tripdata
+WHERE  vendorid IS NOT NULL
+AND    SUBSTR(tpep_pickup_datetime, 1, 7) LIKE '2020-1%';
+```
+</br></br>
 **8. Join taxi trips data with taxi zone look up table**
+```
+-- explore data with lookup information
+-- observe column names from lookup tables
+SELECT td.*, pu.*, do.*
+FROM   raw_yellow_tripdata td, 
+       raw_taxi_zone_lookup pu, 
+       raw_taxi_zone_lookup do 
+WHERE  td.pulocationid = pu.locationid AND
+       td.pulocationid = do.locationid AND
+       vendorid IS NOT NULL AND
+       SUBSTR(tpep_pickup_datetime, 1, 7) LIKE '2020-1%'
+LIMIT 100;
+```
+```
+-- Count total joined records for the last quarter of 2020.
+SELECT COUNT(*) "Count"
+FROM   raw_yellow_tripdata td, 
+       raw_taxi_zone_lookup pu, 
+       raw_taxi_zone_lookup do 
+WHERE  td.pulocationid = pu.locationid AND
+       td.pulocationid = do.locationid AND
+       vendorid IS NOT NULL AND
+       SUBSTR(tpep_pickup_datetime, 1, 7) LIKE '2020-1%';
+```
+</br></br>
+Instructions from AWS to explore the data using SQL queries can be found [here](https://catalog.us-east-1.prod.workshops.aws/workshops/276faf92-bffc-4843-8a8e-8078add48194/en-US/30-exploring-data/34-explore-data-run-queries).
 
+> P.S. In the AWS instructions, the table name `taxi_zone_lookup` in the **JOIN** queries need to be replaced as `raw_taxi_zone_lookup`. Otherwise, queries won't be executed successfully.
 
 ## Lab 3: Transforming the data
 
