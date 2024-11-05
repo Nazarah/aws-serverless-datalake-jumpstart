@@ -114,6 +114,7 @@ The following SQL queries were run to explore the data:
 ```
 SELECT COUNT(*) "Count" FROM raw_yellow_tripdata;
 ```
+![Results](https://github.com/Nazarah/aws-serverless-datalake-jumpstart/blob/main/query-results/lab2/1_no_of_yellow_taxi_trips.csv)
 </br></br>
 **2. Exploring data categories**
 ```
