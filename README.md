@@ -238,6 +238,13 @@ In this lab, AWS Glue Studio has been used to transform existing data from the t
 It is recommended to plan in details for the necessary transformation steps. The following actions were executed to transform the data:
 
 ### Action 1: Reading yellow trip data from S3, raw_yellow_tripdata table
+
+**Step 1: Adding an ETL Job using Amazon Glue Studio** </br>
+
+**Step 2: Adding a data source** </br>
+
+
+
 ### Action 2: Cleaning yellow trip data 
 
 The data from the `raw_yellow_taxi` table was cleaned in 2 steps:</br></br>
