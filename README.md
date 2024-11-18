@@ -241,9 +241,14 @@ It is recommended to plan in details for the necessary transformation steps. The
 
 **Step 1: Adding an ETL Job using Amazon Glue Studio** </br>
 
+![image](https://github.com/Nazarah/aws-serverless-datalake-jumpstart/blob/main/Images/lab3/1_create_ETL_job_glue_1.gif) </br></br>
+![image](https://github.com/Nazarah/aws-serverless-datalake-jumpstart/blob/main/Images/lab3/2_create_ETL_job_glue_2.gif) </br></br>
+
 **Step 2: Adding a data source** </br>
 
-
+![image](https://github.com/Nazarah/aws-serverless-datalake-jumpstart/blob/main/Images/lab3/3_add_data_souuce_1.gif) </br></br>
+![image](https://github.com/Nazarah/aws-serverless-datalake-jumpstart/blob/main/Images/lab3/4_add_data_souuce_2.gif) </br></br>
+![image](https://github.com/Nazarah/aws-serverless-datalake-jumpstart/blob/main/Images/lab3/5_add_data_souuce_3.gif) </br></br>
 
 ### Action 2: Cleaning yellow trip data 
 
@@ -251,17 +256,69 @@ The data from the `raw_yellow_taxi` table was cleaned in 2 steps:</br></br>
 
 **Step 1: Removing records with NULL values** </br>
 
-Any record containing NULL value in the corresponding columns `vendorid`, `payment_type`, `passenger count`, and `ratecodeid` was discarded.
+Any record containing NULL value in the corresponding columns `vendorid`, `payment_type`, `passenger count`, and `ratecodeid` was discarded.</br></br>
+
+![image](https://github.com/Nazarah/aws-serverless-datalake-jumpstart/blob/main/Images/lab3/6_remove_NULL_values_1.gif) </br></br>
+![image](https://github.com/Nazarah/aws-serverless-datalake-jumpstart/blob/main/Images/lab3/7_remove_NULL_values_2.gif) </br></br>
+![image](https://github.com/Nazarah/aws-serverless-datalake-jumpstart/blob/main/Images/lab3/8_remove_NULL_values_3.gif) </br></br>
 
 **Step 2: Filtering records within a time period** </br>
 
 To narrow down the data for efficient processing, all records with invalid values in the corresponding `tpep_pickup_datetime` were discarded.
 
+![image](https://github.com/Nazarah/aws-serverless-datalake-jumpstart/blob/main/Images/lab3/10_add_filter_1.gif) </br></br>
+![image](https://github.com/Nazarah/aws-serverless-datalake-jumpstart/blob/main/Images/lab3/11_add_filter_2.gif) </br></br>
+![image](https://github.com/Nazarah/aws-serverless-datalake-jumpstart/blob/main/Images/lab3/12_add_filter_3.gif) </br></br>
+
 ### Action 3: Joining yellow trip data with taxi zone lookup to obtain pickup location information
+
+**Step 1:Reading the lookup data from S3, raw_taxi_zone_lookup table.**</br>
+
+![image](https://github.com/Nazarah/aws-serverless-datalake-jumpstart/blob/main/Images/lab3/13_add_lookup_table.gif) </br></br>
+
+**Step 2: Renaming column names of the lookup data to differentiate drop-off locations from pickup locations.**</br>
+
+![image](https://github.com/Nazarah/aws-serverless-datalake-jumpstart/blob/main/Images/lab3/14_modify_table_column.gif) </br></br>
+
 ### Action 4: Joining yellow trip data with taxi zone lookup to obtain drop-off location information
+
+![image](https://github.com/Nazarah/aws-serverless-datalake-jumpstart/blob/main/Images/lab3/15_join_1_1.gif) </br></br>
+![image](https://github.com/Nazarah/aws-serverless-datalake-jumpstart/blob/main/Images/lab3/16_join_1_2.gif) </br></br>
+
+
 ### Action 5: Performing data transformation on joined dataset
+
+**Step 1:Adding lookup table for Taxi Drop-off Zone**</br>
+
+![image](https://github.com/Nazarah/aws-serverless-datalake-jumpstart/blob/main/Images/lab3/17_join_2_1.gif) </br></br>
+
+**Step 2:Modifying column names of Taxi Drop-off Zone lookup table**</br>
+
+![image](https://github.com/Nazarah/aws-serverless-datalake-jumpstart/blob/main/Images/lab3/18_join_2_2.gif) </br></br>
+
+**Step 3:Performing join between Yellow Trips data and Taxi Drop-off Zone lookup data**</br>
+
+![image](https://github.com/Nazarah/aws-serverless-datalake-jumpstart/blob/main/Images/lab3/19_join_2_3.gif) </br></br>
+![image](https://github.com/Nazarah/aws-serverless-datalake-jumpstart/blob/main/Images/lab3/20_join_2_4.gif) </br></br>
+
 ### Action 6: Saving processed dataset to S3 in a query optimized format
-### Action 7: Reading yellow trip data from S3, raw_yellow_tripdata table.
+
+**Step 1:Modifying column names and data types of the joined dataset**</br>
+
+![image](https://github.com/Nazarah/aws-serverless-datalake-jumpstart/blob/main/Images/lab3/21_transform_1.gif) </br></br>
+![image](https://github.com/Nazarah/aws-serverless-datalake-jumpstart/blob/main/Images/lab3/22_transform_2.gif) </br></br>
+![image](https://github.com/Nazarah/aws-serverless-datalake-jumpstart/blob/main/Images/lab3/23_transform_3.gif) </br></br>
+![image](https://github.com/Nazarah/aws-serverless-datalake-jumpstart/blob/main/Images/lab3/24_transform_4.gif) </br></br>
+
+**Step 2:Saving transformed data into S3**</br>
+
+![image](https://github.com/Nazarah/aws-serverless-datalake-jumpstart/blob/main/Images/lab3/25_transform_5.gif) </br></br>
+![image](https://github.com/Nazarah/aws-serverless-datalake-jumpstart/blob/main/Images/lab3/26_transform_6.gif) </br></br>
+
+### Action 7: Running the job to reading yellow trip data from S3, raw_yellow_tripdata table
+
+![image](https://github.com/Nazarah/aws-serverless-datalake-jumpstart/blob/main/Images/lab3/27_run_1.gif) </br></br>
+![image](https://github.com/Nazarah/aws-serverless-datalake-jumpstart/blob/main/Images/lab3/28_run_2.gif) </br></br>
 
 
 ## Lab 4: Enriching the data
